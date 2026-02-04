@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+@layer base {
+  body {
+    @apply bg-rose-50 text-slate-800;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  .font-greatvibes {
+    font-family: "Great Vibes", cursive;
+  }
+
+  .ambient-heart {
+    position: absolute;
+    bottom: -10%;
+    color: rgba(244, 63, 94, 0.25);
+    animation-name: floatUp;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-45vh) translateX(12px) scale(1);
+  }
+  100% {
+    transform: translateY(-90vh) translateX(-12px) scale(1.1);
+    opacity: 0;
+  }
+}
